@@ -2,245 +2,252 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Simulacion monte carlo</title>
+  <title>Simulación Monte Carlo</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css">
+
+  <!-- 🎨 Estilos personalizados -->
+  <style>
+    body {
+      background-color: #f7faf7;
+    }
+
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      color: #2e7d32;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .reveal p, .reveal li {
+      font-size: 22px;
+      line-height: 1.4;
+    }
+
+    .reveal section img {
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+     .Reveal.initialize({
+       hash: true,
+         transsition: "fade",
+         transitionSpeed:"slow",
+    backgroundTransition: "fade",
+    slideNumber: true});
+    /* 🎯 Portada */
+    .portada {
+      text-align: center;
+    }
+
+    .portada h1 {
+      font-size: 64px;
+      margin-bottom: 10px;
+    }
+
+    .portada p {
+      font-size: 26px;
+      color: #555;
+    }
+
+    /* 📊 Tablas */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 20px;
+    }
+
+    th, td {
+      border: 1px solid #c8e6c9;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #e8f5e9;
+      color: #1b5e20;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f1f8f4;
+    }
+
+    /* 🎯 Resaltado */
+    .destacado {
+      color: #1b5e20;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
 <div class="reveal">
 <div class="slides">
 
-<section>
-  <h2> Simulación de Monte Carlo</h2>
-  <p> Mariana De Berti - 2026</p>
+<!-- 🎯 PORTADA -->
+<section class="portada">
+  <h1>Simulación de Monte Carlo</h1>
+  <p>Aplicación en decisiones agropecuarias</p>
+  <p style="margin-top:40px;">Mariana De Berti · 2026</p>
 </section>
 
 <section>
   <section>
-   <h4>¿Qué es la simulación de Monte Carlo?</h4>
-  <p>Es una técnica estadística que predice los posibles resultados de un evento incierto mediante el uso de muestreo aleatorio </p>
-  <p>Al simular miles de escenarios con variables aleatorias, permite evaluar riesgos y posibilidades</p>
+    <h3>¿Qué es la simulación de Monte Carlo?</h3>
+    <p>
+      Es una técnica estadística que predice resultados de eventos inciertos
+      mediante <span class="destacado">muestreo aleatorio</span>.
+    </p>
+    <p>
+      Permite evaluar riesgos simulando miles de escenarios posibles.
+    </p>
   </section>
-  <section id="fragmentos">
-    <h3>Se basa en lo siguiente:</h3>
-   <ol>
-     <li class="fragment">Definir un modelo matemático que representa el sistema que se quiere analizar</li>
-     <li class="fragment"> Generar números aleatorios para simular las variables de entrada del modelo</li>
-     <li class="fragment">Ejecutar el modelo con los valores aleatorios y obtener resultados</li>
-     <li class="fragment"> Repetir el proces miles o millones de veces para obtener una distribución de resultados posibles</li>
-   </ol>
-  </section>
-  <Section>
-     <h4>¿Para qué se utiliza?</h4>
-    <ul>
-    <li>Evaluar riesgos, incertidumbres en proyectos y decisiones</li>
-      <li>Analizar sistemas complejos y no lineales</li>
-      <li>Estimar probabilidades y valores esperados</li>
-      <li>Optimizar procesos y sistemas</li>
-    </ul>
-  </Section>
-</section>
-<section>
-  <h4>Ejemplo </h4>
-  <h5> Optimo agronómico vs. óptimo económico</h5>
-</section>
+
   <section>
-  <h4>Optimo agronómico vs económico </h4>
-  <p><b> Óptimo agronómico:</b> Es la dosis de fertilizante que maximiza el rendimiento del cultivo</p>
-  <p><b>Óptimo económico:</b> Es la dosis que maximiza la ganancia, considerando:</p>
+    <h3>¿En qué se basa?</h3>
+    <ol>
+      <li class="fragment">Definir un modelo matemático del sistema</li>
+      <li class="fragment">Generar variables aleatorias</li>
+      <li class="fragment">Ejecutar el modelo</li>
+      <li class="fragment">Repetir miles de veces</li>
+      <li class="fragment">Analizar la distribución de resultados</li>
+    </ol>
+  </section>
+
+  <section>
+    <h3>¿Para qué se utiliza?</h3>
+    <ul>
+      <li>Evaluar riesgos e incertidumbre</li>
+      <li>Analizar sistemas complejos</li>
+      <li>Estimar probabilidades</li>
+      <li>Optimizar decisiones</li>
+    </ul>
+  </section>
+</section>
+
+<section>
+  <h3>Ejemplo</h3>
+  <h4>Óptimo agronómico vs. óptimo económico</h4>
+</section>
+
+<section>
+  <h3>Conceptos clave</h3>
+  <p><b>Óptimo agronómico:</b> dosis que maximiza el rendimiento.</p>
+  <p><b>Óptimo económico:</b> dosis que maximiza la ganancia.</p>
+  <p class="destacado">Más producción ≠ mayor ganancia.</p>
+</section>
+
+<section>
+  <h3>Variables inciertas</h3>
   <ul>
-    <li> Costo del fertilizante</li>
-    <li> Precio del cultivo</li>
-    <li> Rendimiento obtenido</li>
-    <p>Más producción no siempre es sinónimo de mayor ganancia.</p>
+    <li>Clima</li>
+    <li>Calidad del suelo</li>
+    <li>Precipitaciones</li>
+    <li>Respuesta del cultivo</li>
   </ul>
-  </section>
-  <section>
-    <p>El rendimiento del cultivo depende de variables inciertas tales como: </p>
-    <ul>
-      <li> Clima </li>
-      <li> Calidad del suelo </li>
-      <li> Precipitaciones </li>
-      <li> Respuesta del cultivo</li>
-      </ul>
-      <p>No podemos predecir con exactitud el rendimiento final. </p>
-      <p>Necesitamos estimar qué nivel de fertilización maximiza la producción (óptimo agronómico) y la ganancia (óptimo económico) </p>
-  </section>
-  <section>
-    <h4>Objetivo de la simulación</h4>
-    <p>Simular distintos escenarios para estimar:</p>
-    <ul>
-      <li>El rendimiento esperado del cultivo</li>
-      <li>La dosis de fertilizante que maximiza la producción</li>
-      <li>La dosis que maximiza la ganancia económica</li>
-    </ul>
-    <p> Comparar el óptimo agronómico con el óptimo económico</p>
-  </section>
+  <p>No podemos predecir el rendimiento con exactitud.</p>
+</section>
+
 <section>
-  <h4>Dosis de fertilizante en trigo</h4>
-  <p>Supongamos que evaluamos cuatro dosis de fertilizantes, consiederando que:</p>
-  <p>La relación entre dosis y resultado es (1:3)</p>
-  <p>Superando el límite de dosis tolerable por el cultivo el rendimiento comienza a ser decreciente</p>
+  <h3>Objetivo de la simulación</h3>
+  <ul>
+    <li>Estimar rendimiento esperado</li>
+    <li>Encontrar dosis óptima</li>
+    <li>Comparar óptimo agronómico y económico</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Dosis de fertilizante en trigo</h3>
   <table>
     <tr>
-      <td> Dosis (Kg/ha) </td>
-      <td>Rendimiento esperado (tn/ha)</td>
+      <th>Dosis (kg/ha)</th>
+      <th>Rendimiento esperado (tn/ha)</th>
     </tr>
-    <tr>
-      <td>50</td>
-      <td>2 - 2,2</td>
-    </tr>
-    <tr>
-      <td>100</td>
-      <td>2,9 - 3,2</td>
-    </tr>
-    <tr>
-      <td>150</td>
-      <td>3,8 - 4</td>
-    </tr>
-    <tr>
-      <td>200</td>
-      <td> 3,5 - 3,8</td>
-    </tr>
+    <tr><td>50</td><td>2.0 – 2.2</td></tr>
+    <tr><td>100</td><td>2.9 – 3.2</td></tr>
+    <tr><td>150</td><td>3.8 – 4.0</td></tr>
+    <tr><td>200</td><td>3.5 – 3.8</td></tr>
   </table>
-  <p>Usaremos valores aleatorios dentro de estos rangos</p>
+  <p>Se simulan valores aleatorios dentro de estos rangos.</p>
 </section>
+
+<section>
   <section>
-    <section>
-    <h4>Simulación de escenatios</h4>
-    <p>simulamos 10 escenarios climáticos</p>
-    </section>
-      <section>
+    <h3>Simulación de escenarios</h3>
+    <p>Se simulan 10 años agrícolas posibles.</p>
+  </section>
+
+  <section>
     <table>
       <tr>
-        <td><b>Escenario</b></td>
-        <td><b>50 kg</b></td>
-        <td><b>100 kg</b></td>
-        <td><b>150kg</b></td> 
-        <td><b>200</b></td>
+        <th>Escenario</th>
+        <th>50 kg</th>
+        <th>100 kg</th>
+        <th>150 kg</th>
+        <th>200 kg</th>
       </tr>
-      <tr>
-        <td>1</td>
-        <td>3,1</td>
-        <td>4,2</td>
-        <td>4.3</td>
-        <td>4,0</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>2,9</td>
-        <td>3,7</td>
-        <td>4,1</td>
-        <td>3,8</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>3,5</td>
-        <td>4,3</td>
-        <td>4,6</td>
-        <td>4,3</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>3,0</td>
-        <td>3,8</td>
-        <td>4,0</td>
-        <td>3,9</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>3,2</td>
-        <td>4,1</td>
-        <td>4,5</td>
-        <td>4,2</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>2,8</td>
-        <td>3,6</td>
-        <td>3,9</td>
-        <td>3,7</td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>3,4</td>
-        <td>4,4</td>
-        <td>4,7</td>
-        <td>4,5</td>
-      </tr>
-      <tr>
-        <td>8</td>
-        <td>3,3</td>
-        <td>4,0</td>
-        <td>4,3</td>
-        <td>4,0</td>
-      </tr>
-      <tr>
-        <td>9</td>
-        <td>3,0</td>
-        <td>3,9</td>
-        <td>4,2</td>
-        <td>3,9</td>
-      </tr>
-      <tr>
-        <td>10</td>
-        <td>3,6</td>
-        <td>4,5</td>
-        <td>4,8</td>
-        <td>4,6</td>
-      </tr>
-    </table>
-      <p>Cada fila representa un posible año agrícola</p>
-    </section>
-  </section>
-  <section>
-    <img src="Graficomontecarlo.gif" style="max-width: 70%; height:auto;">
-  </section>
-  <section>
-    <h4>Promedio de rendimientos</h4>
-    <p>Rendimiento esperado.</p>
-    <table>
-      <tr>
-        <td><b>Dosis</b></td>
-        <td><b>Rendimiento promedio</b></td>
-      </tr>
-      <tr>
-      <td>50 kg</td>
-      <td>3,18 th/ha</td>
-      </tr>
-      <tr>
-        <td>100 kg</td>
-        <td>4,05 tn/ha</td>
-      </tr>
-      <tr>
-        <td> 150 kg</td>
-        <td>4,35 tn/ha</td>
-      </tr>
+      <tr><td>1</td><td>3.1</td><td>4.2</td><td>4.3</td><td>4.0</td></tr>
+      <tr><td>2</td><td>2.9</td><td>3.7</td><td>4.1</td><td>3.8</td></tr>
+      <tr><td>3</td><td>3.5</td><td>4.3</td><td>4.6</td><td>4.3</td></tr>
+      <tr><td>4</td><td>3.0</td><td>3.8</td><td>4.0</td><td>3.9</td></tr>
+      <tr><td>5</td><td>3.2</td><td>4.1</td><td>4.5</td><td>4.2</td></tr>
+      <tr><td>6</td><td>2.8</td><td>3.6</td><td>3.9</td><td>3.7</td></tr>
+      <tr><td>7</td><td>3.4</td><td>4.4</td><td>4.7</td><td>4.5</td></tr>
+      <tr><td>8</td><td>3.3</td><td>4.0</td><td>4.3</td><td>4.0</td></tr>
+      <tr><td>9</td><td>3.0</td><td>3.9</td><td>4.2</td><td>3.9</td></tr>
+      <tr><td>10</td><td>3.6</td><td>4.5</td><td>4.8</td><td>4.6</td></tr>
     </table>
   </section>
+</section>
+
+ <section>
+  <h3>Distribución de resultados simulados</h3>
+  <div style="
+      background:#ffffff;
+      padding:20px;
+      border-radius:16px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+      display:inline-block;">
+    <img src="Graficomontecarlo.gif" style="max-width: 520px;">
+  </div>
+  <p class="fragment fade-in" style="margin-top:20px;">
+    Cada barra representa la frecuencia de resultados posibles.
+  </p>
+</section>
+
+<section>
+  <h3>Rendimiento promedio</h3>
+  <table>
+    <tr><th>Dosis</th><th>Rendimiento promedio</th></tr>
+    <tr><td>50 kg</td><td>3.18 tn/ha</td></tr>
+    <tr><td>100 kg</td><td>4.05 tn/ha</td></tr>
+    <tr><td>150 kg</td><td>4.35 tn/ha</td></tr>
+  </table>
+</section>
+
+<section>
   <section>
-    <section>
-    <h4>Analisis del riesgo</h4>
-    <h5>¿Qué muestra la simulación?</h5>
-    <p>Aunque 150kg de fertilizante tiene mayor ganancia promedio:</p>
+    <h3>Análisis del riesgo</h3>
     <ul>
-      <li>En algunos escenarios, la diferencia es mínima.</li>
+      <li>La dosis de 150 kg tiene mayor rendimiento promedio</li>
       <li>El mayor costo aumenta el riesgo si el rendimiento baja</li>
     </ul>
-    <p>Monte Carlo permite evaluar no solo el promedio, sino también el riesgo</p>
+    <p>Monte Carlo evalúa promedio <span class="destacado">y riesgo</span>.</p>
   </section>
+
   <section>
-    <h4>Conclusión del ejemplo</h4>
-    <p> El uso de simulaciones permite:</p>
+    <h3>Conclusión</h3>
     <ul>
-      <li>Considerar la variabilidad climática</li>
-      <li>Estimar ganancias esperadas</li>
-      <li>Evaluar riesgos econónmicos</li>
+      <li>Considera variabilidad climática</li>
+      <li>Permite estimar ganancias</li>
+      <li>Evalúa riesgos económicos</li>
     </ul>
-    <p><b>La mejor decisión no depende solo del rendimiento máximo, sino del equilibrio entre ganancia y riesgo</b></p>
+    <p class="destacado">
+      La mejor decisión equilibra ganancia y riesgo.
+    </p>
   </section>
+</section>
+
 </div>
 </div>
 
